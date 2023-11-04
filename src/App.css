@@ -28,3 +28,18 @@
   background-color: #171e69;
   color: white;
 }
+
+.scoree img{
+  width:100%;
+}
+.scoree h1{
+  margin-top: -40%;
+  font-size: calc(var(--index)*3);
+}
+:root{
+  --index:calc(1vw + 1vh);
+}
+.scoree button{
+  margin-top: 20%;
+  font-size: calc(var(--index)/1.5);
+}
