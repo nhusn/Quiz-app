@@ -6,10 +6,10 @@ import scoreee from '../src/score.png'
 function App() {
   const [question, setQuestion] = useState([])
   const [shuffledAnswer, setShuffledAnswer] = useState()
-  const [first, setFirst] = useState({ borderRadius: "14px", backgroundColor: "" })
-  const [second, setSecond] = useState({ borderRadius: "14px", backgroundColor: "" })
-  const [third, setThird] = useState({ borderRadius: "14px", backgroundColor: "" })
-  const [four, setFour] = useState({ borderRadius: "14px", backgroundColor: "" })
+  const [first, setFirst] = useState({ borderRadius: "14px", backgroundColor: ""})
+  const [second, setSecond] = useState({ borderRadius: "14px", backgroundColor: ""})
+  const [third, setThird] = useState({ borderRadius: "14px", backgroundColor: ""})
+  const [four, setFour] = useState({ borderRadius: "14px", backgroundColor: ""})
   const [curQue, setCurQue] = useState(0)
   const [point, setPoint] = useState(0)
   const [btndis, setButtonDis] = useState(false)
@@ -18,7 +18,6 @@ function App() {
   const apiCall = async () => {
     const result = await axios.get("https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple")
     setQuestion(result.data.results)
-    console.log("inside api call");
   }
   const shuffle = () => {
     if (question.length > 0 && curQue<=9) {
@@ -34,7 +33,6 @@ function App() {
     if(curQue>9){
       setIsCompleted(true)
     }
-    console.log("inside shuffle");
   }
 
   const handleAnswer = (choosen, classo) => {
@@ -107,8 +105,6 @@ function App() {
   const handleReset = ()=>{
     setIsCompleted(!isCompleted)
     setCurQue(0)
-    console.log("inside button");
-    console.log(isCompleted);
   }
 
   useEffect(() => {
@@ -128,7 +124,7 @@ function App() {
             { !isCompleted ?
               <div>
               <div>
-                <div className=''>
+                <div>
                   <div className='d-flex justify-content-center'>
                     <h5 className='fw-bold text-center'>Question {curQue + 1}/10 </h5>
                   </div>
